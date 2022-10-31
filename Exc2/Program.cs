@@ -124,7 +124,7 @@ namespace binary_and_linear
     class Program
     {
         // Array to be searched
-        int[] arr = new int[20];
+        int[] ichsan = new int[63];
         //Number of elements in the array
         int n;
         //Get the number of elements to store in the array
@@ -140,7 +140,7 @@ namespace binary_and_linear
                 if ((n > 0) && (n <= 20))
                     break;
                 else
-                    Console.WriteLine("\nArray should have minimum 1 and maximum 20 elements.\n");
+                    Console.WriteLine("\nArray should have minimum 1 and maximum 63 elements.\n");
             }
             //Accept array elements
             Console.WriteLine("");
@@ -152,7 +152,7 @@ namespace binary_and_linear
             {
                 Console.Write("<" + (i + 1) + ">");
                 string s1 = Console.ReadLine();
-                arr[i] = Int32.Parse(s1);
+                ichsan[i] = Int32.Parse(s1);
             }
         }
 
@@ -174,9 +174,9 @@ namespace binary_and_linear
                 int ctr = 1;
 
                 //loop to search for the elements in the array
-                while ((item != arr[mid]) && (lowerbound <= upperbound))
+                while ((item != ichsan[mid]) && (lowerbound <= upperbound))
                 {
-                    if (item > arr[mid])
+                    if (item > ichsan[mid])
                         lowerbound = mid + 1;
                     else
                         upperbound = mid - 1;
@@ -184,7 +184,7 @@ namespace binary_and_linear
                     mid = (lowerbound + upperbound) / 2;
                     ctr++;
                 }
-                if (item == arr[mid])
+                if (item == ichsan[mid])
                     Console.WriteLine("\n" + item.ToString() + "found at position" + (mid + 1).ToString());
                 else
                     Console.WriteLine("\n" + item.ToString() + "not found in the array\n");
@@ -211,7 +211,7 @@ namespace binary_and_linear
                 for (i = 0; i < n; i++)
                 {
                     ctr++;
-                    if (arr[i] == item)
+                    if (ichsan[i] == item)
                     {
                         Console.WriteLine("\n" + item.ToString() + " found st position" + (i + 1).ToString());
                         break;
