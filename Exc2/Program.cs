@@ -95,9 +95,9 @@ namespace QuickShort
             Console.WriteLine("Sorted array element");
             Console.WriteLine("----------------");
 
-            for (int j = 0; j < n; j++)
+            for (int AI = 0; AI < n; AI++)
             {
-                Console.WriteLine(ichsan[j]);
+                Console.WriteLine(ichsan[AI]);
             }
             Console.WriteLine("\nNumber of comporisons:" + cmp_count);
             Console.WriteLine("\nNumber of data movements" + cmp_count);
