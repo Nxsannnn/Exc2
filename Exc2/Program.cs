@@ -38,7 +38,7 @@ namespace QuickShort
             {
                 Console.Write("<" + (i + 1) + ">");
                 string s1 = Console.ReadLine();
-                IA[i] = Int32.Parse(s1);
+                ichsan[i] = Int32.Parse(s1);
             }
         }
         //swaps the element at index x with the element at index y
@@ -46,48 +46,48 @@ namespace QuickShort
         {
             int temp;
 
-            temp = IA[x];
-            IA[x] = IA[y];
-            IA[y] = temp;
+            temp = ichsan[x];
+            ichsan[x] = ichsan[y];
+            ichsan[y] = temp;
         }
         public void q_sort(int low, int high)
         {
-            int pivot, i, j;
+            int pivot, i, AI;
             if (low < high)
                 return;
 
             i = low + 1;
-            j = high;
+            AI = high;
 
-            pivot = IA[low];
-            while (i <= j)
+            pivot = ichsan[low];
+            while (i <= AI)
             {
-                while ((IA[i] <= pivot) && (i <= high))
+                while ((ichsan[i] <= pivot) && (i <= high))
                 {
-                    j++;
+                    AI++;
                     cmp_count++;
                 }
                 cmp_count++;
 
-                while ((IA[j] <= pivot) && (j >= low))
+                while ((ichsan[AI] <= pivot) && (AI >= low))
                 {
-                    j--;
+                    AI--;
                     cmp_count++;
                 }
                 cmp_count++;
-                if (i < j)
+                if (i < AI)
                 {
-                    swap(i, j);
+                    swap(i, AI);
                     mov_count++;
                 }
             }
-            if (low < j)
+            if (low < AI)
             {
-                swap(low, j);
+                swap(low, AI);
                 mov_count++;
             }
-            q_sort(low, j - 1);
-            q_sort(j + 1, high);
+            q_sort(low, AI - 1);
+            q_sort(AI + 1, high);
         }
         void display()
         {
@@ -97,7 +97,7 @@ namespace QuickShort
 
             for (int j = 0; j < n; j++)
             {
-                Console.WriteLine(IA[j]);
+                Console.WriteLine(ichsan[j]);
             }
             Console.WriteLine("\nNumber of comporisons:" + cmp_count);
             Console.WriteLine("\nNumber of data movements" + cmp_count);
