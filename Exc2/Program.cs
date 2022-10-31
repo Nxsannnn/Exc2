@@ -32,7 +32,7 @@ namespace QuickShort
 
             Console.WriteLine("\n===============");
             Console.WriteLine("Enter Array Elements");
-            Console.WriteLine("\n===============");
+            Console.WriteLine("\n==============");
             //get array elements
             for (int i = 0; i < n; i++)
             {
